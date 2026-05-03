@@ -1,0 +1,36 @@
+.login-container {
+    padding: 10vh 5vw;
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+}
+
+.login-card {
+    width: 90%;
+    max-width: 400px;
+    border: 2px solid #7879F1; /* סגול */
+    border-radius: 15px;
+    padding: 5vh;
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 1.5vh;
+    margin: 1vh 0;
+    border: 1px solid #EF5DA8; /* ורוד */
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    width: 100%;
+    padding: 2vh;
+    background-color: #7879F1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2vh;
+}

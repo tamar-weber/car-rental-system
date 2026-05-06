@@ -4,6 +4,11 @@ exports.register = async (req, res) => {
     const { first_name, last_name, phone, email, password, city, neighborhood, street } = req.body;
     
     try {
+        const existingUser = await pool.query('SELECT id FROM users WHERE email = $1', [email]);
+        if (existingUser.rows.length > 0) {
+            return res.status(400).json({ error: 'המייל הזה כבר קיים במערכת' });
+        }
+
         const query = `
             INSERT INTO users (first_name, last_name, phone, email, password, city, neighborhood, street) 
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id, email`;

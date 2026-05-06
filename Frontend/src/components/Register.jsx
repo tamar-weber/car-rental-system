@@ -9,6 +9,7 @@ const Register = () => {
         first_name: '', last_name: '', phone: '', email: '',
         password: '', city: '', neighborhood: '', street: ''
     });
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +22,7 @@ const Register = () => {
             alert("נרשמת בהצלחה!");
             navigate('/dashboard'); // העברה לעמוד האישי
         } else {
-            alert("שגיאה ברישום: " + response.error);
+            setError(response.error || 'שגיאה ברישום');
         }
     };
 
@@ -38,7 +39,7 @@ const Register = () => {
                     <input className="register-input" name="city" placeholder="עיר" onChange={handleChange} required />
                     <input className="register-input" name="neighborhood" placeholder="שכונה" onChange={handleChange} required />
                     <input className="register-input full-width" name="street" placeholder="רחוב (אופציונלי)" onChange={handleChange} />
-                    
+                    {error && <div className="register-error">{error}</div>}
                     <button type="submit" className="register-button">הירשם עכשיו</button>
                 </form>
             </div>

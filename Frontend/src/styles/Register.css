@@ -45,6 +45,13 @@
     outline: none;
 }
 
+.register-error {
+    grid-column: span 2;
+    color: #d12f2f;
+    font-weight: 600;
+    margin-top: 1vh;
+}
+
 .register-button {
     margin-top: 3vh;
     width: 100%;

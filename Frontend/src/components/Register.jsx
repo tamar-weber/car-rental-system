@@ -19,8 +19,9 @@ const Register = () => {
         e.preventDefault();
         const response = await registerUser(formData);
         if (response.user) {
+            localStorage.setItem('user', JSON.stringify(response.user));
             alert("נרשמת בהצלחה!");
-            navigate('/dashboard'); // העברה לעמוד האישי
+            navigate('/dashboard', { state: { success: response.message } });
         } else {
             setError(response.error || 'שגיאה ברישום');
         }

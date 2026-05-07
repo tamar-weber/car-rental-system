@@ -17,3 +17,12 @@ export const loginUser = async (credentials) => {
     });
     return response.json();
 };
+
+export const updateUser = async (profileData) => {
+    const response = await fetch(`${API_URL}/update`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(profileData)
+    });
+    return response.json();
+};

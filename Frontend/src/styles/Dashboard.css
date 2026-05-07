@@ -1,38 +1,155 @@
 .dashboard-container {
     min-height: 100vh;
-    background: linear-gradient(180deg, #f7f3ff 0%, #efe7ff 100%);
+    background: right;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3rem;
+    direction: rtl;
 }
 
 .dashboard-card {
-    max-width: 800px;
+    max-width: 860px;
     width: 100%;
     padding: 3rem;
-    background: white;
+    background: #fcfff8;
     border-radius: 24px;
-    box-shadow: 0 20px 60px rgba(101, 87, 178, 0.15);
-    text-align: center;
+    box-shadow: 0 20px 60px rgba(45, 95, 60, 0.12);
+    text-align: right;
+    border: 1px solid rgba(34, 137, 76, 0.18);
 }
 
 .dashboard-success {
-    background: #dff2e5;
-    color: #1d6a3d;
-    border: 1px solid #a7d7b4;
+    background: #e4fff0;
+    color: #0f502f;
+    border: 1px solid rgba(28, 122, 63, 0.18);
     border-radius: 16px;
     padding: 1rem 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
-.dashboard-card h1 {
-    margin-bottom: 1rem;
-    color: #4d3cb7;
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.dashboard-card p {
-    color: #5d557d;
-    line-height: 1.8;
+.dashboard-card h1 {
+    margin-bottom: 0.4rem;
+    color: #0f502f;
+}
+
+.dashboard-description {
+    color: #295a38;
+    line-height: 1.75;
+    margin-bottom: 1.6rem;
+    max-width: 620px;
+}
+
+.back-button,
+.save-button,
+.cancel-button,
+.edit-button {
+    border: none;
+    border-radius: 14px;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.back-button {
+    background: #1c7a3f;
+    color: white;
+}
+
+.back-button:hover {
+    background: #166534;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.profile-item {
+    background: #f3f9f1;
+    border: 1px solid rgba(28, 122, 63, 0.14);
+    border-radius: 18px;
+    padding: 1.2rem 1.3rem;
+}
+
+.profile-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+
+.profile-label {
+    color: #1b4f29;
+    font-weight: 700;
+}
+
+.profile-value {
+    display: block;
+    color: #183724;
+    font-size: 1rem;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.profile-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(15, 79, 32, 0.18);
+    border-radius: 14px;
+    background: #ffffff;
+    color: #0f3f20;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.edit-button {
+    background: #d7f6de;
+    color: #0f502f;
+}
+
+.edit-button:hover {
+    background: #c1e9c8;
+}
+
+.save-button {
+    background: #1c7a3f;
+    color: #ffffff;
+}
+
+.save-button:hover {
+    background: #166534;
+}
+
+.cancel-button {
+    background: #eef7ed;
+    color: #1b4f29;
+}
+
+.cancel-button:hover {
+    background: #ddeedc;
 }

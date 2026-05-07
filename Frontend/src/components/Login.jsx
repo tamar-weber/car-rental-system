@@ -11,8 +11,9 @@ const Login = () => {
         e.preventDefault();
         const response = await loginUser(credentials);
         if (response.user) {
+            localStorage.setItem('user', JSON.stringify(response.user));
             alert("התחברת בהצלחה!");
-            navigate('/dashboard'); 
+            navigate('/dashboard', { state: { success: response.message } });
         } else {
             alert("פרטים שגויים, נסו שנית");
         }
